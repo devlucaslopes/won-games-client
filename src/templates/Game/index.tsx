@@ -31,37 +31,39 @@ const Game = ({
   upcomingGames,
   upcomingHighlight,
   recommendedGames
-}: GameTemplateProps) => (
-  <Base>
-    <S.Cover src={cover} role="image" aria-label="cover" />
+}: GameTemplateProps) => {
+  return (
+    <Base>
+      <S.Cover src={cover} role="image" aria-label="cover" />
 
-    <S.Main>
-      <S.SectionGameInfo>
-        <GameInfo {...gameInfo} />
-      </S.SectionGameInfo>
+      <S.Main>
+        <S.SectionGameInfo>
+          <GameInfo {...gameInfo} />
+        </S.SectionGameInfo>
 
-      <S.SectionGallery>
-        {!!gallery && <Gallery items={gallery} />}
-      </S.SectionGallery>
+        <S.SectionGallery>
+          {!!gallery && <Gallery items={gallery} />}
+        </S.SectionGallery>
 
-      <S.SectionDescription>
-        <TextContent title="Description" content={description} />
-      </S.SectionDescription>
+        <S.SectionDescription>
+          <TextContent title="Description" content={description} />
+        </S.SectionDescription>
 
-      <S.SectionGameDetails>
-        <GameDetails {...details} />
-        <Divider />
-      </S.SectionGameDetails>
+        <S.SectionGameDetails>
+          <GameDetails {...details} />
+          <Divider />
+        </S.SectionGameDetails>
 
-      <Showcase
-        title="Upcoming"
-        games={upcomingGames}
-        highlight={upcomingHighlight}
-      />
+        <Showcase
+          title="Upcoming"
+          games={upcomingGames}
+          highlight={upcomingHighlight}
+        />
 
-      <Showcase title="You may like these games" games={recommendedGames} />
-    </S.Main>
-  </Base>
-)
+        <Showcase title="You may like these games" games={recommendedGames} />
+      </S.Main>
+    </Base>
+  )
+}
 
 export default Game
